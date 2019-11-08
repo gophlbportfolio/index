@@ -4,86 +4,190 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
   <style>
     :root {
-      --padding: 20px;
+      --padding-big: 40px;
+      --padding-normal: 20px;
+      --padding-small: 10px;
+
+      --strong-color: #222;
+      --medium-color: #444;
+      --light-color: #888;
+      --ultra-light-color: #eee;
     }
-    body { font-family: 'Roboto', sans-serif; font-size: 0.9em; color: #444; }
-    ul { list-style-type: none; }
-    a { color: #222; }
-    a:link { color: #222; }
-    a:visited { color: #222; }
-    a:hover { color: #222; }
-    a:active { color: #222; }
+
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      font-size: 1em; 
+      color: var(--light-color); 
+      padding: var(--padding-big); 
+    }
     
-    .project { margin-bottom: 10px; padding-left: var(--padding); }
-    .project-title { font-size: 1.3em; font-weight: bold; }
-    .project-content { padding-left: var(--padding); }
-    .project-subsection { font-size: 1.1em; font-weight: bold; }    
+    ul { list-style-type: none; }
+    
+    p { margin: 6px 0; }
+    
+    a { color: var(--medium-color); text-decoration: none; }
+    a:link { color: var(--medium-color); text-decoration: none; }
+    a:visited { color: var(--medium-color); text-decoration: none; }
+    a:hover { color: var(--medium-color); text-decoration: none; }
+    a:active { color: var(--medium-color); text-decoration: none; }
+    
+    .container { 
+      display: flex; 
+      justify-content: center; 
+      flex-direction: column; 
+    }
+    
+    .intro { 
+      margin-top: var(--padding-big);
+      font-size: 1.6em; 
+      font-weight: bold; 
+      color: var(--strong-color); 
+    }
+    
+    .project {  }
+    
+    .project-title { 
+      display: flex; 
+      flex-direction: row; 
+      align-items: center;
+      margin: var(--padding-small); 
+      font-size: 1.4em; 
+      font-weight: bold; 
+      color: var(--strong-color); 
+    }
+
+    .project-subsection-title { 
+      margin: var(--padding-big) 0 var(--padding-small) 0; 
+      font-size: 1.2em; 
+      font-weight: bold; 
+      color: var(--medium-color); 
+    }
+
+    .project-content { 
+      margin: var(--padding-small) 0; 
+      color: var(--light-color); 
+    }  
+
+    .disclaimer {
+      font-style: italic;
+      font-size: 1.1em; 
+      color: var(--light-color);
+      margin: var(--padding-normal) 0; 
+    }
+
+    .pad-left { padding-left: var(--padding-normal); }
+
+    .call-to-action { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      margin: 0 var(--padding-big); 
+      padding: var(--padding-small);
+      width: 100px;
+      border: 1px solid var(--light-color); 
+      border-radius: 26px;
+      font-size: 1.2em; 
+      font-weight: bold; 
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--medium-color);
+    }
+
+    .separator { 
+      align-self: center; 
+      width: 92%; 
+      height: 1px; 
+      margin: var(--padding-big) 0; 
+      border: 1px solid var(--light-color); 
+      background-color: var(--ultra-light-color); 
+    }
   </style>
 </head>
 <body>
-  <div>
-    Some of my work:
-  </div>
-  <div class="project">
-    <div class="project-title">
-      <a href="https://gophlbportfolio.github.io/rickmortyhangman/" target=_blank>Rick and Morty hangman (beta version, November 2019)</a>: 
+  <div class="container">
+    <div class="intro">
+      Some of my work:
     </div>
-    <div class="project-content">
-      <p>
-        The classic hangman with a little spice up :)
-      </p>
-      <p>
-        Fight the <a href="https://rickandmorty.fandom.com/wiki/Cromulons" target=_blank>Cromulons</a> and the clock trying to guess the name
-        of the character but be careful: every mistake will make disappear some of your seconds!
-      </p>
-      <p class="project-subsection">
-        Technology used:
-      </p>
-      <p>
-        <ul>
-          <li>Angular 8 + rxjs</li>        
-          <li>html5</li>
-          <li>css3</li>
-          <li>local storage</li>        
-        </ul>
-      </p>
+
+    <div class="separator"></div>
+
+    <div class="project pad-left">
+      <div class="project-title">
+        Rick and Morty hangman (beta version, November 2019) 
+        <a href="https://gophlbportfolio.github.io/rickmortyhangman/" target=_blank>
+          <div class="call-to-action">Play!</div>
+        </a>
+      </div>
+      <div class="project-content pad-left">
+        <p>
+          The classic hangman with a little spice up :)
+        </p>
+        <p>
+          Fight the Cromulons and the clock trying to guess the name
+          of the character but be careful: every mistake will make disappear some of your seconds!
+        </p>
+      </div>
+      <div class="project-content pad-left">
+        <div class="project-subsection-title">
+          Technology used:
+        </div>
+        <div class="pad-left">
+          <p>Angular 8 + rxjs</p>
+          <p>html5</p>
+          <p>css3</p>
+          <p>flexbox + grid</p>
+          <p>local storage</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="project">
-    <div class="project-title">
-      <a href="https://gophlbportfolio.github.io/tileWar/" target=_blank>The tile war (alfa version, October 2019)</a>:
+
+    <div class="separator"></div>
+
+    <div class="project pad-left">
+      <div class="project-title">
+        The tile war (alfa version, October 2019)
+        <a href="https://gophlbportfolio.github.io/tileWar/" target=_blank>
+          <div class="call-to-action">Play!</div>
+        </a>
+      </div>
+      <div class="project-content pad-left">
+        <p class="disclaimer pad-left">
+          Disclaimer: For a better experience, you should play in pc :)
+        </p>
+        <p>
+          A board game for two (or a very bored one) in which you will have to defeat your enemy.
+        </p>
+        <p>
+          Everytime you refresh the page you will get a random grid with random placement of chips and non playable tiles.
+        </p>
+        <p>
+          You decide your strategy: merge your chips, destroy the enemy and absorb its energy if your chip is stronger, 
+          or be a kamikaze and sacrifice your chip just to weaken the enemy.
+        </p>
+      </div>
+      <div class="project-content pad-left">
+        <div class="project-subsection-title">
+          Known issues:
+        </div>
+        <div class="pad-left">
+          <p>Sometimes free tiles are not recognized as free, so the movement is not allowed.</p>
+          <p>Sometimes the merge (or attack) doesn't happen and the chip just rest above the other.</p>
+        </div>
+      </div>
+      <div class="project-content pad-left">
+        <div class="project-subsection-title">
+          Technology used:
+        </div>
+        <div class="pad-left">
+          <p>Angular 8 + rxjs</p>
+          <p>html5</p>
+          <p>css3</p>
+          <p>flexbox + grid</p>
+        </div>
+      </div>
     </div>
-    <div class="project-content">
-      <p>
-        A board game for two (or a very bored one) in which you will have to defeat your enemy.
-      </p>
-      <p>
-        Everytime you refresh the page you will get a random grid with random placement of chips and non playable tiles.
-      </p>
-      <p>
-        You decide your strategy: merge your chips, destroy the enemy and absorb its energy if your chip is stronger, 
-        or be a kamikaze and sacrifice your chip just to weaken the enemy.
-      </p>
-      <p class="project-subsection">
-        Known issues:
-      </p>     
-      <p>
-        <ul>
-          <li>Sometimes free tiles are not recognized as free, so the movement is not allowed.</li>
-          <li>Sometimes the merge (or attack) doesn't happen and the chip just rest above the other.</li>
-        </ul>
-      </p>    
-      <p class="project-subsection">
-        Technology used:
-      </p>
-      <p>
-        <ul>
-          <li>Angular 8 + rxjs</li>        
-          <li>html5</li>
-          <li>css3</li>    
-        </ul>
-      </p>
-    </div>
-  </div>
+
+    <div class="separator"></div>
+  </div>    
 </body>
 </html>
